@@ -27,7 +27,7 @@ function update(changes, id) {
 }
 
 function remove(id) {
-
+return db('schemes').where('id', id).delete()
 }
 
 module.exports = {
@@ -35,4 +35,6 @@ module.exports = {
   findById,
   findSteps,
   add,
+
+  remove
 }
