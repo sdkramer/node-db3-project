@@ -18,7 +18,8 @@ return db('steps as st')
 }
 
 function add(scheme) {
-
+return db('schemes')
+.insert(scheme)
 }
 
 function update(changes, id) {
@@ -33,4 +34,5 @@ module.exports = {
   find,
   findById,
   findSteps,
+  add,
 }
