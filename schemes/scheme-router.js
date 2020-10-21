@@ -51,7 +51,7 @@ router.post('/', (req, res) => {
 
   Schemes.add(schemeData)
   .then(scheme => {
-    res.status(201).json(scheme);
+    res.status(201).json(schemeData);
   })
   .catch (err => {
     res.status(500).json({ message: 'Failed to create new scheme' });
@@ -87,7 +87,8 @@ router.put('/:id', (req, res) => {
     if (scheme) {
       Schemes.update(changes, id)
       .then(updatedScheme => {
-        res.json(updatedScheme);
+        console.log(updatedScheme);
+        res.json(changes);
       });
     } else {
       res.status(404).json({ message: 'Could not find scheme with given id' });

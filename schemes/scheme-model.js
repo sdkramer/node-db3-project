@@ -1,5 +1,7 @@
 const db = require('../data/config')
 
+console.log(db);
+
 function find() {
 return db('schemes')
 }
